@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mobload</title>
+</head>
+<body>
+    <div> 
+        @if (ViewBag.FileName != null)
+        {
+            <h2 class="text-danger"> File State : @ViewBag.State  </h2>
+            <h2 class="text-danger"> File Name : @ViewBag.FileName  </h2>
+            <h2 class="text-danger"> File Name : @ViewBag.FileExt  </h2>
+            <h2 class="text-danger"> File Name : @ViewBag.FileType  </h2>
+        }
+        else
+        {
+            using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-horizontal">
+                    <h4>Upload Photo</h4>
+                    <hr />
+
+                    <table>
+
+                        <tr>
+                            <td> File :  </td>
+                            <td><input type="file" name="file" id="file"/></td>
+                        </tr>
+
+                    </table>
+                    <button type="submit"> Send! </button>
+                </div>
+
+            }
+
+        }
+        </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<scrolltest.ProductViewModels.SendMessageModel>
+
+@{
+    ViewBag.Title = "MyMessages";
+}
+
+<h2>MyMessages</h2>
+
+@if (Model.Count() > 0)
+{
+    <h2>@User.Identity.Name, Here are your messages : </h2>
+    <table class="table table-hover">
+        <tr>
+            <th>
+                From
+            </th>
+            <th>
+                When
+            </th>
+            <th>
+                Message
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SenderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeSent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @*<a href="@Url.Action("Write","Message")/@item.SenderId"> Rispondi </a> <br /> <a href="@Url.Action("Delete","Message")/@item.msgId"> Delete </a>*@
+
+                    <button onclick="location.href='@Url.Action("Write","Message")/@item.SenderName'"> Reply </button>
+                    <button onclick="location.href='@Url.Action("Delete","Message")/@item.msgId'"> Delete </button>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}
+else
+{
+    <h3> You Don't Have Any Messages!  </h3>
+
+}

@@ -1,0 +1,40 @@
+﻿@model scrolltest.ProductViewModels.SendMessageModel
+<link href="~/Content/message.css" rel="stylesheet" />
+
+@if (Session["Sent"] != null)
+{
+    <h1 class="text-danger">@Session["Sent"]</h1>
+}
+else
+{
+<h2>Send Message to:</h2>
+
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+            <h3 class="text-info">@Session["Receiver"]</h3>
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+                @Html.LabelFor(model => model.Content, htmlAttributes: new { @id = "testform", @class = "control-label col-md-2" })
+
+        <div class="col-md-8">
+            @Html.TextAreaFor(model => model.Content, new { @class = "text", @cols = "40", rows = "18" })
+            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+        </div>
+
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input type="submit" value="Send" class="btn btn-default" />
+                </div>
+            </div>
+
+    }
+}
+

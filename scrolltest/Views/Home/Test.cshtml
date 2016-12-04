@@ -1,0 +1,130 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en-ca">
+<head>
+    
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700|Pacifico" rel="stylesheet">
+    <link href="~/Content/Wlcmpg.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title> Parallax </title>
+</head>
+<body>
+
+    <div id="ctn">
+        <div class="back">
+            <h1> DirtySecrets </h1>
+            <div class="scrl">
+  
+                <i class="fa fa-2x fa-chevron-down"></i>
+                <i class="fa fa-2x fa-chevron-down"></i>
+                <i class="fa fa-2x fa-chevron-down"></i> 
+
+            </div>
+        </div>
+        <div class="sometxt">
+            <h2> Welcome to DirtySecrets</h2>
+            <p>
+                DirtySecrets is a web portal through wich you can buy and sell used items in a fast and efficient way.
+            </p>
+        </div>
+        <div class="back2">
+
+            <h1> Dirty Secrets </h1>
+
+        </div>
+        <div class="text2">
+            <h2> How does this work: </h2>
+            <p>
+                After creating a free account you can navigate through the posted items, once you find something interesting <br />
+                you can contact the seller for further information. Or you can add your own items for sell.
+            </p>
+            <h2> Click on the button below to navigate to the browsing page! </h2>
+            <p>
+                <div class="start">
+                    <button onclick="location='@Url.Action("Login","Account")'"> Get Started </button>
+                    <button onclick="location='@Url.Action("Index", "Home")'"> I already have an account</button>
+                </div>
+            </p>
+        </div>
+
+        <div class="ftr">
+            <div id="ftrr">
+                <ul>
+                    <li> <i class="fa fa-facebook"></i> </li>
+                    <li> <i class="fa fa-instagram"></i></li>
+                    <li> <i class="fa fa-twitter"></i> </li>
+                    <li> <i class="fa fa-github"></i> </li>
+                </ul>
+
+                <ul>
+                    <li>&copy; - @DateTime.Now.Year DirtySecrets</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+           
+                var pContainerHeight = $('.back').height();
+
+                $(window).scroll(function () {
+
+                    var wScroll = $(this).scrollTop();
+
+                    if (wScroll > 0)
+                    {
+                        $('.scrl').css('opacity', 0);
+                    }
+                    else {
+                        
+                        $('.scrl').css('opacity', 1);
+
+                    }
+
+                    if (document.documentElement.clientWidth > 720) {
+
+                    if (wScroll <= pContainerHeight) {
+
+                        var op = 1 - (wScroll / pContainerHeight);
+
+                        $('.back h1').css({
+                            'transform': 'translate(0px, ' + Math.round(wScroll / 2) + '%)',
+                            'color': 'rgba(255,20,147,' + op + ')'
+                        });
+
+
+                        console.log(op);
+
+                    }
+
+                        if (wScroll > $('.back2').offset().top - $(window).height() / 2) {
+                            var scrl = wScroll - $(window).height();
+                            console.log(scrl);
+                            $('.back2').addClass('fixit');
+                        }
+                        else {
+                            $('.back2').removeClass('fixit');
+                        }
+
+                    }
+
+                });
+           
+
+        });
+
+    </script>
+</body>
+
+</html>

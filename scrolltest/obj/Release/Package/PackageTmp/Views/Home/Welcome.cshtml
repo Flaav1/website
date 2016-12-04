@@ -1,0 +1,56 @@
+﻿<link href="~/Content/Wlcmpg.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Welcome";
+}
+
+
+<div id="wlcm">
+    <h1> Dirty Secrets </h1>
+
+    <h2>Safely Sell and Buy used underwear.</h2>
+
+    <h4 >
+        We have created an easy to use portal for people to sell and buy used underwear, <br />
+        maintaining a pretty good modercome of privacy. You can choose to contact the seller directly <br />
+        or you can buy through our Premium Service where we take care of everything for you.  <br />
+        You just sit back and relax while we're doing the <span>dirty</span> work.
+    </h4>
+    
+    <h2> How does it work </h2>
+    <h2 > Buy </h2>
+    <h4 >
+        You can browse through our products by clicking the Browse button on the navigation bar, <br />
+        Once you found the right product you can create an account <span> free of charge</span> and contact the seller directly or let us contact him on your behalf,<br />
+        This way you can maintain a <span>100% anonymity</span>. 
+
+    </h4>
+    <h2 > Sell </h2>
+    <h4 >
+        After you've created an account free of charge sellers have to <span>pay a 10€ monthly tax</span> and then you can add as many producs as you like <br />
+        Buyers may contact you directly from our website or they can contact you through our own service to maintain 100% anonymity. <br />
+        Once the buyer makes the payment we advise you to ship your product in the most discrete way possible. 
+
+    </h4>
+    <h4 >
+        For more information you can visit our <a href="@Url.Action("Faq", "Home")">FAQ</a> or <a href="@Url.Action("TandC","Home")">Terms&Conditions</a> pages.
+
+    </h4>
+
+
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $(window).scroll(function () {
+
+            var scrl = $(window).scrollTop();
+            console.log(scrl/100);
+
+            $(".scrl").css("padding-top", scrl / -10);
+           
+        });
+
+    });
+
+</script>

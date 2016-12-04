@@ -1,0 +1,130 @@
+﻿body {
+
+    background-color: rgba(255,182,193, .8); 
+    text-align: center;  
+}
+.obj{
+
+    margin: 20px 20px;
+    background-color: white; 
+    height: 300px;
+    width: 250px;
+    color: rgb(50,50,50);
+    border-radius: 5px;
+    padding: 20px 20px;
+    text-align: center;
+    box-shadow: 0px 0px 5px 2px rgb(100,100,100);
+    transition: all .1s ease;
+    border: 1px solid rgb(100,100,100);
+    position: relative;
+    
+
+}
+.obj:hover{
+
+    box-shadow: 0px 0px 0px 0px hotpink;
+    transform: scale(1.03);
+}
+#toTop{
+
+     margin: 20px auto;
+     width: 50%;
+     height: 25px;
+     border: 2px solid white;
+     background-color : inherit;
+     color: white;
+     font-family: 'Inconsolata', monospace; 
+     transition: all .3s ease-in;
+     border-radius: 5px;
+     box-shadow: 0px 0px 30px 1px hotpink;
+}
+#toTop:hover{
+
+    background-color: white;
+    color: hotpink;
+
+
+}
+#progress{
+
+    
+    background-color: lightpink;
+    height: 7px;
+    width: 100%;
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 50px 1px hotpink;
+}
+#bar {
+
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background-color: white;
+
+}
+
+.obj button{
+
+    padding: 5px 10px;
+    background-color: inherit;
+    border: 2px solid hotpink;
+    color: hotpink;
+    float: right;
+    font-family: 'Inconsolata', monospace;  
+    transition: all .3s ease-in-out;
+    position: relative;
+    bottom: 40px;
+    right: -10px;
+    border-radius: 5px;
+}
+.obj button:hover{
+
+    background-color: hotpink;
+    color: white;
+    border:  2px solid hotpink;
+
+}
+.obj h3 {
+    position : relative;
+    left: -80px;
+
+}
+.ctnr{
+
+    position: relative; 
+    width: 80%; 
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    left: 10%;
+    background-color: rgba(255,182,193, .0);
+   
+}
+.photo
+{
+
+    border: 1px solid black;
+    width: 230px;
+    height: 80%;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    margin-bottom: 0;
+}
+#filter{
+    
+    position: fixed;
+    left: -100px;
+    top: 20%;
+    width: 300px;
+    height: 500px;
+    background: red;
+}
+#filter button{
+    position: absolute;
+    right: -60px;
+    width: 60px;
+}

@@ -1,0 +1,161 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en-ca">
+<head>
+    
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700|Pacifico" rel="stylesheet">
+    <link href="~/Content/Wlcmpg.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title> Parallax </title>
+</head>
+<body>
+
+    <div id="ctn">
+        <div class="back">
+            <h1> DirtySecrets </h1>
+            <div class="scrl">
+  
+                <i class="fa fa-2x fa-chevron-down"></i>
+                <i class="fa fa-2x fa-chevron-down"></i>
+                <i class="fa fa-2x fa-chevron-down"></i> 
+
+            </div>
+        </div>
+        <div class="sometxt">
+            <h2> Title Test Bla Bla</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+                nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+                nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
+                pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+                tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra
+                quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.
+                Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus,
+                tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
+                blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien
+                ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed
+                fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit
+                cursus nunc
+
+            </p>
+        </div>
+        <div class="back2">
+
+            <h1> Dirty Secrets </h1>
+
+        </div>
+        <div class="text2">
+            <h2> Test 2 title blabla </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+                nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+                nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
+                pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+                tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra
+                quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.
+                Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus,
+                tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
+                blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien
+                ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed
+                fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit
+                cursus nunc
+            </p>
+            <h2> Some Other Stuff! </h2>
+            <p>
+
+                This stuff is pretty cool today man ahahaha peace man!
+
+            </p>
+        </div>
+
+        <div class="ftr">
+            <div id="ftrr">
+                <ul>
+                    <li> Hello </li>
+                    <li> Hello </li>
+                    <li> Hello </li>
+                    <li> Hello </li>
+
+                </ul>
+                <ul>
+                    <li> Hello </li>
+                    <li> Hello </li>
+                    <li> Hello </li>
+                    <li> Hello </li>
+                </ul>
+
+                <ul>
+                    <li>some footer stuff</li>
+                    <li>some other footer stuff</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+           
+                var pContainerHeight = $('.back').height();
+
+                $(window).scroll(function () {
+
+                    var wScroll = $(this).scrollTop();
+
+                    if (wScroll > 0)
+                    {
+                        $('.scrl').css('opacity', 0);
+                    }
+                    else {
+                        
+                        $('.scrl').css('opacity', 1);
+
+                    }
+
+                    if (document.documentElement.clientWidth > 720) {
+
+                    if (wScroll <= pContainerHeight) {
+
+                        var op = 1 - (wScroll / pContainerHeight);
+
+                        $('.back h1').css({
+                            'transform': 'translate(0px, ' + Math.round(wScroll / 2) + '%)',
+                            'color': 'rgba(255,20,147,' + op + ')'
+                        });
+
+
+                        console.log(op);
+
+                    }
+
+                        if (wScroll > $('.back2').offset().top - $(window).height() / 2) {
+                            var scrl = wScroll - $(window).height();
+                            console.log(scrl);
+                            $('.back2').addClass('fixit');
+                        }
+                        else {
+                            $('.back2').removeClass('fixit');
+                        }
+
+                    }
+
+                });
+           
+
+        });
+
+    </script>
+</body>
+
+</html>

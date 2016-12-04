@@ -1,0 +1,44 @@
+﻿<link href="~/Content/Wlcmpg.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Welcome";
+}
+
+
+<div id="wlcm">
+    <h1> Dirty Secrets </h1>
+
+    <h2>Safely Sell and Buy used items.</h2>
+    
+    <h2> How does it work </h2>
+    <h2 > Buy </h2>
+    <h4 >
+        You can browse through our products by clicking the Browse button on the navigation bar, <br />
+        Once you found the right product you can create an account <span> free of charge</span> and contact the seller. 
+    </h4>
+    <h2 > Sell </h2>
+    <h4 >
+        After you've created an account free of charge you can add as many products as you like. <br />
+    </h4>
+    <h4 >
+        For more information you can visit our <a href="@Url.Action("Faq", "Home")">FAQ</a> or <a href="@Url.Action("TandC","Home")">Terms&Conditions</a> pages.
+
+    </h4>
+
+
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $(window).scroll(function () {
+
+            var scrl = $(window).scrollTop();
+            console.log(scrl/100);
+
+            $(".scrl").css("padding-top", scrl / -10);
+           
+        });
+
+    });
+
+</script>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.25920.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scrolltest", "scrolltest\scrolltest.csproj", "{BB0B07D9-D151-4E62-A9FA-5C0C84FAD5FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{3EF7536C-6F61-4F7E-AC15-707415CBFC0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB0B07D9-D151-4E62-A9FA-5C0C84FAD5FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB0B07D9-D151-4E62-A9FA-5C0C84FAD5FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB0B07D9-D151-4E62-A9FA-5C0C84FAD5FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB0B07D9-D151-4E62-A9FA-5C0C84FAD5FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF7536C-6F61-4F7E-AC15-707415CBFC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF7536C-6F61-4F7E-AC15-707415CBFC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF7536C-6F61-4F7E-AC15-707415CBFC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF7536C-6F61-4F7E-AC15-707415CBFC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

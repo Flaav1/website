@@ -1,0 +1,10 @@
+C:\Users\Flavius\documents\visual studio 2015\Projects\scrolltest\DAL\bin\Debug\DAL.dll.config
+C:\Users\Flavius\documents\visual studio 2015\Projects\scrolltest\DAL\bin\Debug\DAL.dll
+C:\Users\Flavius\documents\visual studio 2015\Projects\scrolltest\DAL\bin\Debug\DAL.pdb
+C:\Users\Flavius\documents\visual studio 2015\Projects\scrolltest\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Flavius\documents\visual studio 2015\Projects\scrolltest\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Flavius\documents\visual studio 2015\Projects\scrolltest\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Flavius\documents\visual studio 2015\Projects\scrolltest\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Flavius\documents\visual studio 2015\Projects\scrolltest\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Flavius\documents\visual studio 2015\Projects\scrolltest\DAL\obj\Debug\DAL.dll
+C:\Users\Flavius\documents\visual studio 2015\Projects\scrolltest\DAL\obj\Debug\DAL.pdb

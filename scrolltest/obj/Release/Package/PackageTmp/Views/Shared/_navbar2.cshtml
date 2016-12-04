@@ -1,0 +1,30 @@
+﻿
+
+    <div id="nav-wrapper">
+
+        <div id="btns">
+            <button onclick="location.href='@Url.Action("Welcome","Home")'" class="bttn"> DirtySecrets </button><button onclick="location.href='@Url.Action("Faq","Home")'"  class="bttn">
+                FAQ
+            </button><button onclick="location.href='@Url.Action("Index","Home")'" class="bttn">
+                BROWSE
+            </button>
+            @if (User.Identity.IsAuthenticated)
+            {
+
+                <button id="user" class="bttn">
+                    <i class="fa fa-angle-double-down arrowup" aria-hidden="true"></i>  @User.Identity.Name <i class="fa fa-angle-double-down arrowup" aria-hidden="true"></i>
+                </button>
+            }
+            else
+            {
+                <button id="logbtn" onclick="location.href='@Url.Action("Login","Account")'" class="bttn">
+                     LOGIN 
+                </button>
+
+            }
+        </div>
+    </div>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/user-menu.js"></script>

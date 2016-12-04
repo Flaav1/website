@@ -1,0 +1,24 @@
+﻿
+<link href="~/Content/navbar.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+          
+        </div>
+        <div class="navbar-collapse collapse navy">
+            <ul class="nav navbar-nav">
+               <li> @Html.ActionLink("DirtySecrets", "Index", "Home", new { area = "" }, new { @class = "navbar-brand logo" }) </li>
+                <li>@Html.ActionLink("LOGIN", "Login", "Account", new { area = "" }, new { @class = "btnn" })</li>
+                <li>@Html.ActionLink("REGISTER", "Register", "Account", new { area = "" }, new { @class = "btnn" })</li>
+                <li>@Html.ActionLink("ABOUT", "Contact", "Home", new { area = "" }, new { @class = "btnn" })</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Browse";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<link href="~/Content/style.css" rel="stylesheet" />
+
+<div class="ctnr">
+
+
+
+
+</div>
+<div id="progress">
+    <div id="bar">
+     
+    </div>
+</div>
+<button id="toTop"> ^ back to top ^ </button>
+
+
+<script type="text/javascript">
+    var currentpage = 1;
+    loadData(1);
+
+    $(window).scroll(function () {
+
+        var progress = $(window).scrollTop();
+        if (progress < 50)
+        {
+            console.log(progress);
+            $("#progress").css("top", 50 - progress);
+        }
+        else
+        {
+            $("#progress").css("top", 0);
+        }
+
+        
+        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+
+
+           
+
+            console.log("click");
+            currentpage++;
+            loadData(currentpage);
+
+        }
+    });
+
+    function Details(index) {
+
+        window.location.href = '@Url.Action("Person","Home")' + '/' + index;
+
+    };
+
+    function loadData(pstPage) {
+        $.ajax({
+            url: '@Url.Action("Update","Home")',
+            method: 'post',
+            data: { page: pstPage },
+            dataType: 'json',
+            success: function (data) {
+                var ctn = $(".ctnr")
+
+                $(data).each(function (index, emp) {
+
+                    var progres = currentpage / Math.ceil(emp.progress / 9) * 100
+
+                    $("#bar").css("width", progres+"%");
+
+                    ctn.append('<div class="col-md-3 obj"><img class="photo" src="'+emp.Name+'" alt="test">' +
+                                ' <h3>' +
+                                  emp.Grade + ' $ </h3>  <button class="btn-item-detail" onclick="Details(' + emp.UserId + ')"> Details </button> </div>');
+
+                });
+
+
+            }
+        });
+    }
+
+   
+    var filteropened = false;
+
+    $("#filter-btn").click(function () {
+
+        if (filteropened == false) {
+            console.log("filter-opened");
+            $(".filter-content-hide").addClass("filter-content-show");
+            filteropened = true;
+        }
+        else {
+            console.log("filter-closed");
+            $(".filter-content-hide").removeClass("filter-content-show");
+            filteropened = false;
+        }
+
+
+
+    });
+
+    var body = $('html, body');
+
+    $('#toTop').click(function (e) {
+        e.preventDefault();
+        body.animate({ scrollTop: 0 }, '1500', 'swing');
+
+    });
+
+
+
+</script>

@@ -1,0 +1,18 @@
+﻿
+@if(User.Identity.IsAuthenticated)
+{
+    
+    <div id="usermnu" class="user-acc-closed">
+
+        <div id="closbtn"> <i class="fa fa-times-circle fa-2x"></i> </div>
+
+        <ul>
+            <li onclick="location.href='@Url.Action("MyAccount","Account")'"> MyAccount </li>
+            <li onclick="location.href='@Url.Action("MyMessages","Message")'"> Messages </li>
+            <li onclick="location.href='@Url.Action("Addfile","Product")'"> Add Product </li>
+            <li onclick="location.href='@Url.Action("Logout","Account")'"> Logout </li>
+            <li id="close-usr"> Close </li>
+        </ul>
+    </div>
+
+}

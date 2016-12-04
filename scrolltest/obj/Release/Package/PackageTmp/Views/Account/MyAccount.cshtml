@@ -1,0 +1,44 @@
+﻿@model scrolltest.Models.myAccount
+
+@{
+    ViewBag.Title = "MyAccount";
+}
+@if (ViewBag.Message != null)
+{
+    <h2> @ViewBag.Message </h2>
+
+}
+else
+{
+    <div class="row">
+        <div class="col-lg-8">
+            <h1>@Model.user.UserName</h1>
+
+            <h3> Member since : @Model.regdate </h3>
+            <h3> Seller : @Model.user.Seller</h3>
+            <h3> Products : @Model.products.Count </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table-bordered">
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model.products)
+                {
+                    <tr>
+                        <td>@item.title</td>
+                        <td>@item.price</td>
+                        <td>@item.description</td>
+                        <td onclick="location='@Url.Action("Person", "Home")'+'/'+@item.Id'"> Show </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+}

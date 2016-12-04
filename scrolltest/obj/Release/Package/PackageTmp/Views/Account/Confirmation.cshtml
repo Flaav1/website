@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Confirmation";
+}
+
+<h2>Confirmation page</h2>
+@if (Session["Confirmed"] != null)
+{
+    <h4> Your Account Has Been Verified, pleasae Login to start using our services! </h4>
+
+
+}
+else
+{
+
+    <h4>Your account has been registered but it is blocked untill you confirm your e-mail adress, Please check your e-mail for the Confirmation Link so you can have access to your account!</h4>
+}
+
+

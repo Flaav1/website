@@ -1,0 +1,144 @@
+﻿@model scrolltest.Models.Accounts
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@{
+    ViewBag.Title = "Register";
+}
+
+
+@if (ViewBag.Message != null)
+{
+
+    <h3> @ViewBag.Message</h3>
+}
+else
+{
+
+    using (Html.BeginForm())
+    {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Accounts</h4>
+
+        @if (Session["RegError"] != null)
+        {
+            <h4 class="text-danger"> @Session["RegError"]</h4>
+        }
+        @if (Session["RegEmailError"] != null)
+        {
+            <h4 class="text-danger"> @Session["RegEmailError"]</h4>
+        }
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                <h5 id="uresp" class="text-danger"> </h5>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+                <h5 id="datecheck" class="text-danger"> </h5>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                <h5 id="eresp" class="text-danger"> </h5>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#UserName").change(function () {
+            console.log("changed : " + $("#UserName").val());
+
+            $.ajax({
+                url: '@Url.Action("CheckName","Account")',
+                method: 'post',
+                data: { name: $("#UserName").val() },
+                dataType: 'text',
+                success: function (data) {
+                    $("#uresp").html(data);
+                }
+            });
+        });
+
+        $("#email").change(function () {
+
+            $.ajax({
+                url: '@Url.Action("CheckMail","Account")',
+                method: 'post',
+                data: { mail: $("#email").val() },
+                dataType: 'text',
+                success: function (data) {
+                    $("#eresp").html(data);
+                }
+            });
+
+        });
+
+        $("#DateOfBirth").change(function () {
+
+            $.ajax({
+                url: '@Url.Action("CheckDate","Account")',
+                method: 'post',
+                data: { date: $("#DateOfBirth").val() },
+                dataType: 'text',
+                success: function (data) {
+                    $("#datecheck").html(data);
+                }
+            });
+
+
+        });
+
+    });
+
+
+
+
+
+
+</script>

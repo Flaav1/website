@@ -1,0 +1,49 @@
+﻿@model scrolltest.Models.ProductViewModel
+
+<link href="~/Content/product.css" rel="stylesheet" />
+
+
+
+<h2 class="breadcrumb text-center">@Model.Title</h2>
+<hr />
+
+<div class="row" >
+    <div class="col-md-5">
+
+        <img class="img-responsive" src="@Model.Image" />
+
+
+    </div>
+    <div class="col-md-offset-1 col-md-5" >
+
+        <p class="text-left"> @Model.Description  </p>
+
+        <h3 class="text-info col-md-offset-1">$ @Model.price</h3>
+
+       
+        <div class="row">
+
+            <div class="col-md-9">
+                <h5 class="breadcrumb"> Seller : @Model.Owner</h5>
+            </div>
+
+           <div class="col-md-3">
+
+               <button onclick="location.href='@Url.Action("Write", "Message")/@Model.id'" class="btn btn-lg"> Contact Seller </button>
+
+           </div>
+
+            
+
+
+        </div>
+       
+
+    </div>
+
+
+
+
+</div>
+
+
